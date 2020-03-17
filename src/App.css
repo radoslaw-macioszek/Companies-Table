@@ -1,38 +1,426 @@
-.App {
-  text-align: center;
+/* $color-grey-light: #f7f7f7;
+$color-grey: #c5c2c2;
+$color-grey-dark: #777;
+$color-white: #fff;
+$color-black: #000; */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+	font-size: 62.5%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+	box-sizing: border-box;
+	font-family: "lato", sans-serif;
+	font-weight: 400;
+	line-height: 1.7;
+	color: #777;
+	padding: 3rem;
+	background-color: #f7f7f7;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header {
+	display: block;
+	text-align: center;
+	text-transform: uppercase;
 }
 
-.App-link {
-  color: #61dafb;
+table {
+	position: relative;
+	width: 100%;
+	text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+td {
+	border-top: 1px solid black;
+	padding: 5px;
+	font-size: 1.5rem;
+}
+.form-input {
+	margin: 1rem;
+	margin-left: 25%;
+	width: 50%;
+}
+
+.data-form-input {
+	text-align: center;
+}
+
+.data-input {
+	margin: 0 1rem 0 0.5rem;
+}
+.input {
+	width: 100%;
+	padding: 0.8rem;
+	border-radius: 5px;
+	outline: none;
+	font-size: 1.5rem;
+}
+thead {
+	width: 100%;
+	font-size: 2rem;
+	align-items: center;
+}
+
+nav {
+	text-align: center;
+	width: 100%;
+}
+
+a {
+	margin-top: 2rem;
+	margin-right: 0.2%;
+	text-decoration: none;
+	color: #777;
+}
+
+a:hover {
+	color: rgb(53, 52, 52);
+}
+
+.btn:hover {
+	color: #000;
+	box-shadow: 0 1rem 2rem rgba(#000, 0.2);
+	transform: translateY(0.3rem);
+	background-color: rgb(184, 182, 182);
+}
+
+.btn:active {
+	transform: translateY(0.1rem);
+	box-shadow: 0 0.5rem 1rem rgba(#000, 0.2);
+	background-color: rgb(184, 182, 182);
+}
+.btn:focus {
+	transform: translateY(-0.15rem);
+	color: rgb(53, 52, 52);
+
+	background-color: rgb(247, 244, 244);
+	text-decoration: underline;
+}
+
+.btn:visited {
+	transform: translateY(0.1rem);
+	background-color: rgb(184, 182, 182);
+}
+
+.small-margin-bottom {
+	margin-bottom: 2rem;
+}
+.smaller-margin-bottom {
+	margin-bottom: 1rem;
+}
+
+.relative-position {
+	position: relative;
+}
+
+.loading {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	font-size: 2rem;
+}
+
+.btn {
+	text-decoration: none;
+	padding: 0.5rem 1rem;
+	display: inline-block;
+	border-radius: 1rem;
+	transition: all 0.2s;
+	border: 0.1rem solid #c5c2c2;
+}
+
+.chart {
+	height: 50rem;
+	width: 100%;
+}
+
+label {
+	display: block;
+	margin-top: 5rem;
+	font-size: 2rem;
+	text-align: center;
+	text-decoration-line: underline;
+}
+
+.sub {
+	color: #000;
+	font-size: 2.5rem;
+}
+
+h1 {
+	display: grid;
+}
+
+@media screen and (max-width: 1200px) {
+	thead {
+		width: 100%;
+		font-size: 1.8rem;
+		align-items: center;
+	}
+
+	body {
+		padding: 3rem;
+	}
+
+	table {
+		width: 98%;
+	}
+
+	td {
+		border-top: 1px solid black;
+		padding: 5px;
+		font-size: 1.6rem;
+	}
+	h1 {
+		font-size: 3rem;
+	}
+
+	h3 {
+		font-size: 1.6rem;
+	}
+
+	.data-input {
+		margin: 0 1rem 0 0.5rem;
+		font-size: 2rem;
+	}
+
+	input.input {
+		font-size: 2rem;
+	}
+
+	a.btn {
+		font-size: 1rem;
+		padding: 5px 10px;
+		margin-bottom: 0.7rem;
+	}
+
+	.chart {
+		width: 110rem;
+	}
+}
+@media screen and (max-width: 1100px) {
+	.chart {
+		width: 99rem;
+		height: 100rem;
+	}
+}
+@media screen and (max-width: 1000px) {
+	.chart {
+		width: 93rem;
+		height: 93rem;
+	}
+}
+@media screen and (max-width: 900px) {
+	.chart {
+		width: 80rem;
+		height: 83rem;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	thead {
+		width: 100%;
+		font-size: 1.8rem;
+		align-items: center;
+	}
+
+	table {
+		width: 98%;
+	}
+
+	.chart {
+		width: 75rem;
+	}
+
+	td {
+		border-top: 1px solid black;
+		padding: 5px;
+		font-size: 1.5rem;
+	}
+
+	input.input {
+		font-size: 1.5rem;
+	}
+
+	a.btn {
+		padding: 5px 10px;
+		font-size: 1rem;
+		margin-bottom: 0.7rem;
+	}
+
+	input.input {
+		font-size: 2rem;
+	}
+	h1 {
+		font-size: 3rem;
+	}
+
+	.chart {
+		width: 70rem;
+		height: 70rem;
+	}
+}
+@media screen and (max-width: 700px) {
+	.chart {
+		width: 65rem;
+		height: 65rem;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	thead {
+		width: 100%;
+		font-size: 1rem;
+		align-items: center;
+	}
+
+	td {
+		border-top: 1px solid black;
+		padding: 5px;
+		font-size: 1rem;
+	}
+
+	body {
+		padding: 1rem;
+	}
+	.chart {
+		width: 55rem;
+		height: 55rem;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.chart {
+		width: 45rem;
+		height: 45rem;
+	}
+}
+
+@media screen and (max-width: 420px) {
+	thead {
+		width: 100%;
+		font-size: 1.1rem;
+		align-items: center;
+	}
+
+	td {
+		border-top: 1px solid black;
+		padding: 5px;
+		font-size: 1rem;
+	}
+
+	body {
+		padding: 0.5rem;
+	}
+
+	span {
+		font-size: 1.5rem;
+	}
+
+	.sub {
+		color: #000;
+		font-size: 1.5rem;
+	}
+	h1 {
+		font-size: 2rem;
+	}
+
+	h3 {
+		font-size: 1rem;
+	}
+
+	.data-input {
+		margin: 0 1rem 0 0.5rem;
+		font-size: 1.5rem;
+	}
+	label {
+		font-size: 1.5rem;
+		margin-top: 3rem;
+	}
+	a.btn {
+		font-size: 1rem;
+		padding: 1px 4px;
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+
+	input.input {
+		font-size: 1rem;
+	}
+
+	.chart {
+		width: 41rem;
+		height: 39rem;
+	}
+}
+
+@media screen and (max-width: 370px) {
+	h3 {
+		font-size: 1rem;
+		margin-bottom: 1rem;
+	}
+	.sub {
+		color: #000;
+		font-size: 1.2rem;
+		margin-bottom: 1rem;
+	}
+	.small-margin-bottom {
+		margin-bottom: 0.4rem;
+	}
+	.smaller-margin-bottom {
+		margin-bottom: 0.2rem;
+	}
+	thead {
+		margin-top: 1rem;
+		font-size: 1rem;
+	}
+
+	td {
+		font-size: 1rem;
+	}
+
+	label {
+		font-size: 1.5rem;
+		margin-top: 3rem;
+	}
+	.data-input {
+		margin: 0 1rem 0 0.5rem;
+		font-size: 1rem;
+	}
+
+	span {
+		font-size: 1.2rem;
+	}
+
+	a.btn {
+		font-size: 0.8rem;
+		padding: 1px 4px;
+		margin-bottom: 0.7rem;
+		margin-top: 1rem;
+	}
+
+	input.input {
+		font-size: 1rem;
+	}
+
+	.chart {
+		width: 37rem;
+		height: 37rem;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	h3 {
+		font-size: 0.8rem;
+	}
+
+	span {
+		font-size: 1rem;
+	}
 }
